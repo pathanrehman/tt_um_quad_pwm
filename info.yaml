@@ -1,17 +1,17 @@
 # Tiny Tapeout project information
 project:
-  title:        ""      # Project title
-  author:       ""      # Your name
+  title:        "QuadPWM - 4-Channel Variable Duty Cycle PWM Generator"      # Project title
+  author:       "Your Name"      # Your name
   discord:      ""      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
-  description:  ""      # One line description of what your project does
+  description:  "QuadPWM generates four independent PWM channels with individually controllable 8-bit duty cycles (0-255 levels). Features synchronized timing, real-time duty cycle adjustment, and configurable PWM frequency. Perfect for LED brightness control, motor speed regulation, multi-channel analog signal generation."      # One line description of what your project does
   language:     "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
-  clock_hz:     0       # Clock frequency in Hz (or 0 if not applicable)
+  clock_hz:     10000000       # Clock frequency in Hz (10 MHz for good PWM resolution)
 
   # How many tiles your design occupies? A single tile is about 167x108 uM.
   tiles: "1x1"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
 
   # Your top module name must start with "tt_um_". Make it unique by including your github username:
-  top_module:  "tt_um_example"
+  top_module:  "tt_um_quad_pwm"
 
   # List your project's source files here.
   # Source files must be in ./src and you must list each source file separately, one per line.
@@ -23,34 +23,32 @@ project:
 # This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
 pinout:
   # Inputs
-  ui[0]: ""
-  ui[1]: ""
-  ui[2]: ""
-  ui[3]: ""
-  ui[4]: ""
-  ui[5]: ""
+  ui[0]: "CHANNEL_SEL_0"
+  ui[1]: "CHANNEL_SEL_1"
+  ui[2]: "LOAD_ENABLE"
+  ui[3]: "PRESCALER_0"
+  ui[4]: "PRESCALER_1"
+  ui[5]: "PRESCALER_2"
   ui[6]: ""
   ui[7]: ""
-
   # Outputs
-  uo[0]: ""
-  uo[1]: ""
-  uo[2]: ""
-  uo[3]: ""
-  uo[4]: ""
-  uo[5]: ""
-  uo[6]: ""
-  uo[7]: ""
-
+  uo[0]: "PWM_CH0"
+  uo[1]: "PWM_CH1"
+  uo[2]: "PWM_CH2"
+  uo[3]: "PWM_CH3"
+  uo[4]: "COUNTER_MSB"
+  uo[5]: "PRESCALER_TICK"
+  uo[6]: "LOAD_STATUS"
+  uo[7]: "ANY_CH_ACTIVE"
   # Bidirectional pins
-  uio[0]: ""
-  uio[1]: ""
-  uio[2]: ""
-  uio[3]: ""
-  uio[4]: ""
-  uio[5]: ""
-  uio[6]: ""
-  uio[7]: ""
+  uio[0]: "DUTY_CYCLE_0"
+  uio[1]: "DUTY_CYCLE_1"
+  uio[2]: "DUTY_CYCLE_2"
+  uio[3]: "DUTY_CYCLE_3"
+  uio[4]: "DUTY_CYCLE_4"
+  uio[5]: "DUTY_CYCLE_5"
+  uio[6]: "DUTY_CYCLE_6"
+  uio[7]: "DUTY_CYCLE_7"
 
 # Do not change!
 yaml_version: 6
