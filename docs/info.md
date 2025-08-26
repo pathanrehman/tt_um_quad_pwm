@@ -206,7 +206,3 @@ Output voltage = (duty_cycle/255) × 3.3V
 | **Duty Readback** | uio_out[7:0] | Optional LED bank for duty display |
 
 QuadPWM provides a comprehensive platform for learning multi-channel PWM concepts while demonstrating practical applications in motor control, LED management, and analog signal synthesis.
-
-[11](https://takeoffprojects.com/page/blog/verilog-projects-for-ece)
-[12](https://docs.cocotb.org/en/stable/quickstart.html)
-[13](https://github.com/topics/verilog-project)
